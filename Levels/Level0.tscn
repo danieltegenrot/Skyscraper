@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Floor/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Blocks/Block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level0.gd" type="Script" id=3]
+[ext_resource path="res://Score/Score.tscn" type="PackedScene" id=4]
+
+[node name="Level0" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 72.0
+margin_bottom = 46.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 576 )
+
+[node name="Floor2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 576 )
+
+[node name="Floor3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 576 )
+
+[node name="Block" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 160 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 200, 300 )
+current = true
+
+[node name="Score" parent="Camera" instance=ExtResource( 4 )]
+position = Vector2( -40, 52 )
